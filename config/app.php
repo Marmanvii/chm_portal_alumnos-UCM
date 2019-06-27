@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'es',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -161,7 +161,6 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Laraveles\Spanish\SpanishServiceProvider::class,
 
         /*
          * Package Service Providers...
