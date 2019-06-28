@@ -41,7 +41,7 @@ Route::get('/empresa', 'EmpresaController@index')->name('empresa');
 #RUTAS DE TOMA DE RAMOS#
 
 Route::get('/decisionToma',function(){
-	return view('toma.principal');
+	return view('Estudiantes.principal');
 })->name('toma.decisionToma');
 
 
@@ -69,7 +69,7 @@ Route::get('botacurso{id}/destroy',[
 
 //RUTAS DE LA TOMA DE RAMOS PARTE DIRECTOR
 Route::get('/decisionTomaD',function(){
-	return view('toma.principal2');
+	return view('Director.principal2');
 })->name('toma.decisionToma2');
 
 Route::resource('directorToma','TomaDirectorController');

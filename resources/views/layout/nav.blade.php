@@ -54,12 +54,23 @@
     @if(Auth::check()) {{-- Verificamos que esté iniciada la sesión --}}
       @if (Auth::user()->tipo_usuario == 'estudiante'){{-- Botones a los que tendrá acceso solo el estudiante --}}
         <a class="waves-effect" href="/estudiante">Perfil Estudiante</a> {{-- Copiar el botón para agregar redireccionamientos --}}        
+       <ul class="collapsible"> <!--Collapsible de información extra2-->
+              <li>
+                <a href="{{route('toma.decisionToma')}}" class="waves-effect">
+                  &nbsp<b> Solicitud de ramos</a>
+              </li>
+            </ul>
+
       @endif
       @if (Auth::user()->tipo_usuario == 'profesor')
         <a class="waves-effect" href="/profesor">Perfil Profesor</a> 
       @endif
       @if (Auth::user()->tipo_usuario == 'director')
         <a class="waves-effect" href="/director">Perfil Director</a> 
+         <li>
+                <a href="{{route('toma.decisionToma2')}}" class="waves-effect">
+                  &nbsp<b> Solicitud de ramos</a>
+              </li>
       @endif
       @if (Auth::user()->tipo_usuario == 'secretaria')
         <a class="waves-effect" href="/secretaria">Perfil Secretaria</a> 

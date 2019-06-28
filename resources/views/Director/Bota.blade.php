@@ -1,5 +1,5 @@
 {{-- Mantenemos estandar base --}}
-@extends('toma.layout.master')
+@extends('layout.master')
 
 {{-- Cambiamos titulo de pagina --}}
 @section('title')

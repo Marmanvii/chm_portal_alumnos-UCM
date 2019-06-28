@@ -17,7 +17,7 @@ class TomaBotaDirectorController extends Controller
     public function index()
     {
         $muestracursos = TomaBotaCurso::All();
-        return view('toma.indexBD')->with('muestracursos',$muestracursos);
+        return view('Director.Bota')->with('muestracursos',$muestracursos);
     }
 
     /**

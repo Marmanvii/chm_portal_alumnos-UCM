@@ -18,7 +18,7 @@ class TomaDirectorController extends Controller
     public function index()
     {
         $muestracursos = TomarCurso::All();
-        return view('toma.indexD')->with('muestracursos',$muestracursos);
+        return view('Director.Solicitud')->with('muestracursos',$muestracursos);
     }
 
     /**

@@ -50,14 +50,14 @@ class EstudiantesController extends Controller
     {
         $cursos = Curso::All();
         $user = User::find(Auth::User()->id);
-        return view('toma.index')->with('user',$user)->with('cursos',$cursos);
+        return view('Estudiantes.Solicitud')->with('user',$user)->with('cursos',$cursos);
     }
 
     public function crea_toma_curso()
     {
         $user = User::find(Auth::User()->id);
         $cursos = Curso::All();
-        return view('toma.create')->with('user',$user)->with('cursos',$cursos);
+        return view('Estudiantes.create')->with('user',$user)->with('cursos',$cursos);
     }
 
 //FUNCION QUE GUARDA EL CURSO SELECCIONADO
@@ -119,7 +119,7 @@ class EstudiantesController extends Controller
     {
         $cursos = Curso::All();
         $user = User::find(Auth::User()->id);
-        return view('toma.indexB')->with('user',$user)->with('cursos',$cursos);
+        return view('Estudiantes.Bota')->with('user',$user)->with('cursos',$cursos);
     }
 
     public function eliminarBota($id)

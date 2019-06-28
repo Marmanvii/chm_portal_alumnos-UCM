@@ -92,12 +92,8 @@
             </li>
           </ul>
 
-          <ul class="collapsible"> <!--Collapsible de información extra2-->
-              <li>
-                <a href="{{route('toma.decisionToma2')}}" class="btn btn-primary">
-                  &nbsp<b> Solicitud de ramos</a>
-              </li>
-          </ul>
+     
+     
 
         </div>      
       </div>

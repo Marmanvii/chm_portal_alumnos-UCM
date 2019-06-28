@@ -1,5 +1,5 @@
 {{-- Mantenemos estandar base --}}
-@extends('toma.layout.master')
+@extends('layout.master')
 
 {{-- Cambiamos titulo de pagina --}}
 @section('title')
@@ -80,7 +80,7 @@
       </center>
 </div>
 
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
 @endsection
 
 @section('scripts')
@@ -102,67 +102,4 @@
     var instances = M.FormSelect.init(elems);
   });
 
-  window.onload = function() {
-
-var datoss = [
-  {
-      "date":1506796200000,
-      "units":1353
-  },
-  {
-      "date":1506882600000,
-      "units":1123
-  },
-  {
-      "date":1506969000000,
-      "units":1022
-  },
-  {
-      "date":1507055400000,
-      "units":1224
-  },
-  {
-      "date":1507141800000,
-      "units":1068
-  }
-];
-var dataPoints = [];
-
-var options =  {
-	animationEnabled: true,
-	theme: "light2",
-	title: {
-		text: "Daily Sales Data"
-	},
-	axisX: {
-		valueFormatString: "DD MMM YYYY",
-	},
-	axisY: {
-		title: "USD",
-		titleFontSize: 24,
-		includeZero: false
-	},
-	data: [{
-		type: "spline", 
-		yValueFormatString: "$#,###.##",
-		dataPoints: dataPoints
-	}]
-};
-
-function addData(data) {
-  console.log(data);
-	for (var i = 0; i < data.length; i++) {
-		dataPoints.push({
-			x: new Date(data[i].date),
-			y: data[i].units
-		});
-	}
-	$("#chartContainer").CanvasJSChart(options);
-
-}
-  addData(datoss);
-
-}
-</script>
-
-@endsection
+ </script>
