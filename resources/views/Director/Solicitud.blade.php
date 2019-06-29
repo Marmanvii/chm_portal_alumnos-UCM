@@ -50,7 +50,7 @@
                    <div id="idModal{{$muestracurso->id}}" class="modal">          
                     <div class="modal-content">
                       
-                      <form action="{{ route('directorToma.update',$muestracurso->id) }}" method="POST">
+                      <form action="{{ route('director.edita',$muestracurso->id) }}" method="POST">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                         <h3>EDITAR ESTADO</h3>

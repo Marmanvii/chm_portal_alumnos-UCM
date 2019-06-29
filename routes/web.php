@@ -38,8 +38,9 @@ Route::get('/empresa', 'EmpresaController@index')->name('empresa');
 
 
 
-#RUTAS DE TOMA DE RAMOS#
+#--------------------------------RUTAS DE TOMA DE RAMOS---------------------------------------#
 
+// -----------ESTUDIANTES--------------
 Route::get('/decisionToma',function(){
 	return view('Estudiantes.principal');
 })->name('toma.decisionToma');
@@ -48,7 +49,6 @@ Route::get('/decisionToma',function(){
 // RUTAS PARA SOLICITAR RAMOS DE PARTE DEL ESTUDIANTE
 Route::get('/tomacurso','EstudiantesController@tomacurso')->name('usuario.toma');
 Route::get('/tomacurso/crea','EstudiantesController@crea_toma_curso')->name('crea.toma');
-//Route::post('/tomado','EstudiantesController@guardacurso')->name('usuario.guarda');
 Route::post('/tomado2','EstudiantesController@modal')->name('usuario.guarda2');
 
 Route::get('tomacurso{id}/destroy',[
@@ -67,18 +67,15 @@ Route::get('botacurso{id}/destroy',[
 ]);
 
 
-//RUTAS DE LA TOMA DE RAMOS PARTE DIRECTOR
+//----------- DIRECTOR------------------------------
 Route::get('/decisionTomaD',function(){
 	return view('Director.principal2');
 })->name('toma.decisionToma2');
+//---solicitudes de tomar ramos-------
+Route::get('/directorToma','DirectorController@tomaIndex')->name('director.toma');
+Route::put('/directorEdita/{id}','DirectorController@tomaEdit')->name('director.edita');
+//---solicitudes de botar ramos------
+Route::get('/directorTomaBota','DirectorController@botaIndex')->name('director.bota');
+Route::put('/directorEditaBota/{id}','DirectorController@botaEdit')->name('director.botaedita');
 
-Route::resource('directorToma','TomaDirectorController');
-
-Route::resource('directorTomaBota','TomaBotaDirectorController');
-
-
-//Route::get('/tomacursoD','DirectorController@muestracurso')->name('director.toma');
-//Route::post('/editado','DirectorController@editaToma')->name('diretor.toma');
-
-
-
+#-----------------------------FIN RUTAS DE TOMA DE RAMOS----------------------------------------#

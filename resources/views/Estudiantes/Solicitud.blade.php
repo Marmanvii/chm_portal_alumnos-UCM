@@ -27,7 +27,7 @@
           <th>Creditos</th>
           <th>Motivo</th>
           <th>Estado</th>
-          <th>Eliminar</th>>
+          <th>Eliminar</th>
           <th></th>
         </thead>
         <tbody>
@@ -67,7 +67,7 @@
                     @endforeach
                   </select>
                 </div>
-
+              <h5> Ingrese el motivo</h5>
                 <div class="input-field col s12">
                   <select name="motivo"> 
                     <option {{ $curso->motivo}}</option>
@@ -77,7 +77,6 @@
                     <option value="no lo inscribi">No Inscripcion</option>
                     <option value="aumento de creditos">Aumento de Credito</option>
                   </select>
-                  <label>Materialize Select</label>
                 </div>
 
 

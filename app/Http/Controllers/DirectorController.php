@@ -7,7 +7,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use App\Curso;
 use App\TomarCurso;
-
+use App\TomaBotaCurso;
 class DirectorController extends Controller
 {
     public function index()
@@ -46,18 +46,34 @@ class DirectorController extends Controller
         //
     }
 
-/*FUNCIONES DEL DIRECTOR EN LA TOMA DE RAMOS
-    public function muestracurso()
-    {   
-        $muestracursos = TomarCurso::All();
-        return view('toma.indexD')->with('muestracursos',$muestracursos);
-    }
-*/
-    public function editaToma($id)
+    // -----------------------FUNCIONES DE TOMA DE RAMOS---------------------
+
+    public function tomaIndex()
     {
-        $tomarcurso = TomarCurso::find($id);
-        $tomarcurso->estado = $request->estado;
-        $tomarcurso->save();
+        $muestracursos = TomarCurso::All();
+        return view('Director.Solicitud')->with('muestracursos',$muestracursos);
+    }
+
+    public function tomaEdit(Request $request,$id)
+    {
+        $muestracursos = TomarCurso::find($id);
+        $muestracursos->estado = $request->estado;
+        $muestracursos->save();
         return redirect()->route('director.toma');
     }
+
+    public function botaIndex()
+    {
+        $muestracursos = TomaBotaCurso::All();
+        return view('Director.Bota')->with('muestracursos',$muestracursos);
+    }
+
+    public function botaEdit(Request $request, $id)
+    {
+        $muestracursos = TomaBotaCurso::find($id);
+        $muestracursos->estado = $request->estado;
+        $muestracursos->save();
+        return redirect()->route('director.bota');
+    }
+
 }

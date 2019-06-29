@@ -26,7 +26,7 @@
           <th>Curso</th>
           <th>Creditos</th>
           <th>Estado</th>
-          <th>Eliminar</th>>
+          <th>Eliminar</th>
           <th></th>
         </thead>
         <tbody>
@@ -65,16 +65,7 @@
                   </select>
                 </div>
 
-                <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Elija un motivo</option>
-                    <option value="sin_prerequisito">sin_prerequisito</option>
-                    <option value="con_prerequisito">con_prerequisito</option>
-                    <option value="no lo inscribi">no lo inscribi</option>
-                    <option value="aumento de creditos">aumento de creditos</option>
-                  </select>
-                  <label>Materialize Select</label>
-                </div>
+
 
                 <button class="btn btn-info" type="submit">Añadir</button>
              </form>

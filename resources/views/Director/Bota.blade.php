@@ -26,9 +26,9 @@
           <th>Código</th>
           <th>Curso</th>
           <th>Creditos</th>
-          <th>Motivo</th>
+
           <th>Estado</th>
-          <th>Editar</th>>
+          <th>Editar</th>
           <th></th>
         </thead>
         <tbody>
@@ -39,7 +39,7 @@
               <td>{{$muestracurso->curso->codigo }}</td>
               <td>{{$muestracurso->curso->nombre }}</td>
               <td>{{$muestracurso->curso->creditos }}</td>   
-              <td>{{$muestracurso->curso->motivo}}</td>
+
               <td>{{$muestracurso->estado }}</td> 
               <td>
                   <!-- MODAL-->
@@ -49,7 +49,7 @@
                    <div id="idModal{{$muestracurso->id}}" class="modal">          
                     <div class="modal-content">
                       
-                      <form action="{{ route('directorTomaBota.update',$muestracurso->id) }}" method="POST">
+                      <form action="{{ route('director.botaedita',$muestracurso->id) }}" method="POST">
                         {{csrf_field()}}
                         {{method_field('PUT')}}
                         <h3>EDITAR ESTADO</h3>
@@ -99,4 +99,3 @@
   });
 
 </script>
-@endsection

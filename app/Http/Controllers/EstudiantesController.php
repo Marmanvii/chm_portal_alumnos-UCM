@@ -46,6 +46,9 @@ class EstudiantesController extends Controller
         //
     }
 
+
+
+    // ----------------------------FUNCIONES DE TOMA DE RAMOS-------------------------------
     public function tomacurso()
     {
         $cursos = Curso::All();
@@ -62,7 +65,6 @@ class EstudiantesController extends Controller
 
 //FUNCION QUE GUARDA EL CURSO SELECCIONADO
     public function modal(Request $request){
-        //dd($request->nombre);
         $user = User::find(Auth::User()->id);
         $cursos = Curso::All();
 
@@ -73,29 +75,10 @@ class EstudiantesController extends Controller
                 $laid= $curso->id;
             }
         }
-                /*
-                //validacion de que no pueda ingresar dos veces un curso
-                $tomacursos = TomarCurso::All();
-                foreach($tomacursos as $tomacurso){
-                    if($tomacurso->user_id == $user->id){
-                        if($tomacurso->curso_id == $curso->id){
-                            //dd('curso repetido');
-                            return redirect()->route('usuario.toma');           
-                        }
-                    }
-                }
-                $tomacursos = new TomarCurso();
-                $tomacurso->user_id = $user->id;
-                $tomacurso->curso_id = $curso->id;
-                $tomacurso->save();
-                return redirect()->route('usuario.toma');           
-            }
-        }*/
         $tomacursos=TomarCurso::All();
         foreach($tomacursos as $tomacurso){
             if($tomacurso->user_id == $user->id){
                 if($tomacurso->curso_id == $laid){
-                    //dd('curso repetido');
                     return redirect()->route('usuario.toma');           
                 }
             }
@@ -144,7 +127,6 @@ class EstudiantesController extends Controller
         foreach($tomacursos as $tomacurso){
             if($tomacurso->user_id == $user->id){
                 if($tomacurso->curso_id == $laid){
-                    //dd('curso repetido');
                     return redirect()->route('usuario.bota');           
                 }
             }
@@ -155,5 +137,7 @@ class EstudiantesController extends Controller
         $tomacurso->save();
         return redirect()->route('usuario.bota');
     } 
+
+    // ---------------FIN FUNCIONES TOMA DE RAMOS-----------------
 
 }
