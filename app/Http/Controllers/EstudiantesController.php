@@ -11,10 +11,10 @@ use App\TomarCurso;
 use App\TomaBotaCurso;
 
 
-use Auth;
+
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
-use App\User;
+
 use App\Practicasprofesionale;
 use App\PostulacionesPractica;
 
