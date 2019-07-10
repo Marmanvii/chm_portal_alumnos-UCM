@@ -44,7 +44,7 @@
               <td>
                   <!-- MODAL-->
                   <div class="container section">
-                    <a href="#idModal{{$muestracurso->id}}" class="btn modal-trigger yellow">editar</a>
+                    <a href="#idModal{{$muestracurso->id}}" class="btn modal-trigger yellow"><ion-icon size="large" name="create"></ion-icon></a>
 
                    <div id="idModal{{$muestracurso->id}}" class="modal">          
                     <div class="modal-content">
@@ -61,7 +61,7 @@
                               <option value="rechazado">rechazado</option>
                             </select>
                           </div>
-                        <button class="btn btn-info" type="submit">Editar</button>
+                        <button class="btn btn-info" onclick="M.toast({html: 'estado editado exitosamente', displayLenght: 4000})" type="submit">Editar</button>
                       </form>
 
                     </div>
@@ -78,7 +78,7 @@
 
       </center>
 </div>
-
+<a href="{{route('toma.decisionToma2')}}" class="btn btn"> Menú pricipal</a>
   
 @endsection
 
@@ -99,3 +99,5 @@
   });
 
 </script>
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>

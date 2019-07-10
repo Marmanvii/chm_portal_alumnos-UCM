@@ -40,7 +40,7 @@
               <td>{{ $tomarcurso->motivo}}
               <td>{{ $tomarcurso->estado }}</td> 
               
-              <td><a href="{{route('tomacurso.destroy', $tomarcurso->id)}}" class="btn btn red"> eliminar</a></td>
+              <td><a href="{{route('tomacurso.destroy', $tomarcurso->id)}}" onclick="M.toast({html: 'solicitud eliminada exitosamente', displayLenght: 4000})" class="btn btn red"> eliminar</a></td>
             </tr>      
           @endforeach
         </tbody>
@@ -83,7 +83,7 @@
 
 
 
-                <button class="btn btn-info" type="submit">Añadir</button>
+                <button class="btn btn-info" onclick="M.toast({html: 'solicitud enviada exitosamente', displayLenght: 4000})" type="submit">Añadir</button>
              </form>
            </div>
          </div>

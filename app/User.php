@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\PostulacionesPractica;
 
 class User extends Authenticatable
 {
@@ -17,10 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'id', 'rut', 'password',
-        'nombres', 'apellidos', 'email', 'direccion_actual',
-        'direccion_procedencia', 'telefono', 'celular', 'fecha_ingreso',
-        'cargo', 'departamento', 'tipo_usuario', 'email_verified_at'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -41,7 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
     public function tomarcursos()
     {
         return $this->hasMany('App\TomarCurso','user_id');
@@ -51,9 +46,4 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\TomaBotaCurso','user_id');
     }
-
-    public function PostulacionPractica(){
-        return $this->hasMany(PostulacionesPractica::class, 'id', 'alumnoid');
-      }
-
 }

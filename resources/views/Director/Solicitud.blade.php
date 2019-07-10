@@ -21,31 +21,32 @@
     <div class="container">
       <center>
         <table id="user_table" class="table table-striped">
+        <center>
           <th>ID</th>
-          <th>Alumno</th>
-          <th>Código</th>
-          <th>Curso</th>
-          <th>Creditos</th>
-          <th>Motivo</th>
-          <th>Estado</th>
-          <th>Editar</th>
-          <th></th>
+          <th class="center">Alumno</th>
+          <th  class="center">Código</th>
+          <th  class="center">Curso</th>
+          <th  class="center">Creditos</th>
+          <th  class="center">Motivo</th>
+          <th  class="center">Estado</th>
+          <th  class="center">Editar</th>
+          </center>
         </thead>
         <tbody>
           @foreach($muestracursos as $muestracurso)
+            <center>
             <tr>
-              <td>{{$muestracurso->id }}</td>
-              <td>{{$muestracurso->user->nombres}}</td>
-              <td>{{$muestracurso->curso->codigo }}</td>
-              <td>{{$muestracurso->curso->nombre }}</td>
-              <td>{{$muestracurso->curso->creditos }}</td> 
-              <td>{{$muestracurso->motivo}}</td> 
-              <td>{{$muestracurso->curso->motivo}}</td> 
-              <td>{{$muestracurso->estado }}</td> 
-              <td>
+              <td  class="center">{{$muestracurso->id }}</td>
+              <td  class="center">{{$muestracurso->user->nombres}}</td>
+              <td  class="center">{{$muestracurso->curso->codigo }}</td>
+              <td  class="center">{{$muestracurso->curso->nombre }}</td>
+              <td  class="center">{{$muestracurso->curso->creditos }}</td> 
+              <td  class="center">{{$muestracurso->motivo}}</td> 
+              <td  class="center">{{$muestracurso->estado }}</td> 
+              <td  class="center">
                   <!-- MODAL-->
                   <div class="container section">
-                    <a href="#idModal{{$muestracurso->id}}" class="btn modal-trigger yellow">editar</a>
+                    <a href="#idModal{{$muestracurso->id}}" class="btn modal-trigger yellow"><ion-icon size="large" name="create"></a>
 
                    <div id="idModal{{$muestracurso->id}}" class="modal">          
                     <div class="modal-content">
@@ -62,7 +63,7 @@
                               <option value="rechazado">rechazado</option>
                             </select>
                           </div>
-                        <button class="btn btn-info" type="submit">Editar</button>
+                        <button class="btn btn-info" onclick="M.toast({html: 'estado editado exitosamente', displayLenght: 4000})" type="submit">Editar</button>
                       </form>
 
                     </div>
@@ -71,7 +72,8 @@
                 </div>
               </td> 
 
-            </tr>      
+            </tr>  
+            </center>    
           @endforeach
         </tbody>
 
@@ -80,7 +82,7 @@
       </center>
 </div>
 
-
+<a href="{{route('toma.decisionToma2')}}" class="btn btn"> Menú pricipal</a>
 @endsection
 
 @section('scripts')
@@ -103,3 +105,4 @@
   });
 
  </script>
+ <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
